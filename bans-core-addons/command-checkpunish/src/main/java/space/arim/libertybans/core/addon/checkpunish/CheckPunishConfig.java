@@ -35,7 +35,7 @@ public interface CheckPunishConfig extends AddonConfig {
 	Component usage();
 
 	@ConfKey("does-not-exist")
-	@ConfDefault.DefaultString("&cThat punishment does not exist. It may be expired or have been revoked.")
+	@ConfDefault.DefaultString("&cThat punishment does not exist.")
 	Component doesNotExist();
 
 	@ConfDefault.DefaultStrings({

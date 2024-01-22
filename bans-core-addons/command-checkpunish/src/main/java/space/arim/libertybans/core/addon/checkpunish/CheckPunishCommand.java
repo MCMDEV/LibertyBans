@@ -93,7 +93,7 @@ public final class CheckPunishCommand extends AbstractSubCommandGroup {
 				sender().sendMessage(config.usage());
 				return null;
 			}
-			return selector.getActivePunishmentById(id).thenCompose((optPunishment) -> {
+			return selector.getHistoricalPunishmentById(id).thenCompose((optPunishment) -> {
 				if (optPunishment.isEmpty()) {
 					sender().sendMessage(config.doesNotExist());
 					return completedFuture(null);

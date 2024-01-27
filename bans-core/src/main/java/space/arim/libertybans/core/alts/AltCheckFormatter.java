@@ -76,6 +76,7 @@ public class AltCheckFormatter {
 			return formatting.layout()
 					.replaceText("%ADDRESS%", detectedAlt.address().toString())
 					.replaceText("%RELEVANT_USERID%", detectedAlt.uuid().toString())
+					.replaceText("%RELEVANT_USERNAME%", detectedAlt.username())
 					.replaceText("%DATE_RECORDED%", formatter.formatAbsoluteDate(detectedAlt.recorded()))
 					.asComponent()
 					.replaceText((config) -> {

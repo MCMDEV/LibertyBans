@@ -22,10 +22,7 @@ package space.arim.libertybans.core.importing;
 import jakarta.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import space.arim.libertybans.api.AddressVictim;
-import space.arim.libertybans.api.NetworkAddress;
-import space.arim.libertybans.api.PlayerVictim;
-import space.arim.libertybans.api.PunishmentType;
+import space.arim.libertybans.api.*;
 import space.arim.libertybans.api.punish.Punishment;
 import space.arim.libertybans.api.scope.ScopeManager;
 import space.arim.libertybans.api.scope.ServerScope;
@@ -164,7 +161,7 @@ public class LiteBansImportSource implements ImportSource {
 				throw new ImportException("Unable to parse LiteBans IP address", ex);
 			}
 			return Optional.of(
-					new PortablePunishment.VictimInfo(uuid, null, address, AddressVictim.of(address)));
+					new PortablePunishment.VictimInfo(uuid, null, address, CompositeVictim.of(uuid, address)));
 		}
 
 		private PortablePunishment.OperatorInfo mapOperatorInfo(ResultSet resultSet) throws SQLException {
